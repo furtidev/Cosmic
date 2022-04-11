@@ -14,5 +14,8 @@ pip install -r requirements.txt
 - Create a `.env` file and then put these two variables: `DISCORD_API_TOKEN` & `BING_MAP_API_KEY`. You can get your own Bing Map Key from [Bing Map Portal](https://www.bingmapsportal.com/).
 - Please note, `keep_alive.py` only exists so that you can host the 24/7 app using [Repl.it](https://replit.com) & [UptimeRobot](https://uptimerobot.com). By default, it is commented out in `main.py`.
 
+# Showcase
+![ss1](screenshots/screenshot.png)
+![ss2](screenshots/screenshot_2.png)
 # License
 The project is licensed under the MIT license.
