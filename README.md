@@ -1,8 +1,11 @@
 # What is Cosmic?
 ## Cosmic is an open source and free to use informational and utility focused Discord Bot. It is themed around Space and most of the commands are space related as well.
 <p align="center">
-  <img src="logo.jpg" />
+  <img src="logo.jpg" width="250" height="250"/>
 </p>
+
+# Invite Cosmic
+[Invite Cosmic](https://discord.com/api/oauth2/authorize?client_id=963048404244643870&permissions=414467872832&scope=bot)
 
 # Self-hosting
 - Clone the repository.
