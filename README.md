@@ -21,4 +21,4 @@ pip install -r requirements.txt
 ![ss1](screenshots/screenshot.png)
 ![ss2](screenshots/screenshot_2.png)
 # License
-The project is licensed under the MIT license.
+The project is licensed under the [MIT](LICENSE) license.
