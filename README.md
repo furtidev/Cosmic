@@ -5,7 +5,7 @@
 </p>
 
 # Invite Cosmic
-[Invite Cosmic](https://discord.com/api/oauth2/authorize?client_id=963048404244643870&permissions=414467872832&scope=bot)
+[Invite Cosmic to your Discord server!](https://discord.com/api/oauth2/authorize?client_id=963048404244643870&permissions=414467872832&scope=bot)
 
 # Self-hosting
 - Clone the repository.
