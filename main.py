@@ -23,7 +23,8 @@ prefix = '$'
 description = "Get information about various space related stuff. Oh, and there are some non-space related stuff too."
 accent = 0x352f2e
 error_color = 0xFF5555
-footers = ["Seems good to me."]
+success_color = 0x55FF55
+footers = ["Seems good to me.", "Vibing to Interstellar music!"]
 
 bot = commands.Bot(command_prefix=prefix, description=description, intents=intents, help_command=None)
 
@@ -61,6 +62,7 @@ async def help(ctx, command_name=None):
 		embed = discord.Embed(title='This is our menu, sir.', description=f"Use `{prefix}help <command_name>` to get more information about each command.", color=accent)
 		embed.add_field(name='Core', value=fetch_cog('coreCommands'))
 		embed.add_field(name='Space', value=fetch_cog('spaceCommands'))
+		embed.add_field(name='Utility', value=fetch_cog('utilityCommands'))
 		await ctx.send(embed=embed)
 	# if something else is passed as argument
 	else:
@@ -110,6 +112,21 @@ class spaceCommands(commands.Cog):
 		embed.add_field(name="Here's the list:", value=people_list)
 		await msg.edit(embed=embed)
 
+class utilityCommands(commands.Cog):
+	def __init__(self, ctx):
+		self.bot = bot
+
+	@commands.command(name='shorturl', help='URL Shortener, now that\'s good stuff')
+	async def shorturl(self, ctx, *, url:str):
+		embed = discord.Embed(title='Shortening your URL...', color=accent)
+		msg = await ctx.send(embed=embed)
+		data = use_rest_api(f'https://ulvis.net/API/write/get?url={url}&private=1&type=json')
+		embed = discord.Embed(title='Successfull!', color=success_color)
+		embed.add_field(name=':link: Shortened Link', value=data["data"]["url"])
+		embed.add_field(name=':paperclips: Original Link', value=data["data"]["full"])
+		embed.set_footer(text=random.choice(footers))
+		await msg.edit(embed=embed)
+
 extensions = []
 if __name__ == '__main__':
 	for extension in extensions:
@@ -118,6 +135,7 @@ if __name__ == '__main__':
 # adding the cogs
 bot.add_cog(coreCommands(bot))
 bot.add_cog(spaceCommands(bot))
+bot.add_cog(utilityCommands(bot))
 
 #keep_alive()
 
